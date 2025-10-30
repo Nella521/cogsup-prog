@@ -7,3 +7,20 @@ should be programmed to keep guessing at it until it finds the number you are th
 At every step, add comments reflecting the logic of what the particular line of code is (supposed 
 to be) doing. 
 """
+
+from random import randint
+
+low = 1
+high = 100
+
+while True: #while the number wasn't found
+    guess = randint(low, high)
+    print(f"computer guess: {guess}") #number chosen by the computer
+    resp = input("hint (lower/higher/correct): ")
+    if resp== "correct":  # answers and appropriaely assigning the guess ranges (low/high)
+        print(f"number found: {guess}")
+        break
+    elif resp == "lower":
+        high = guess - 1
+    elif resp == "higher":
+        low = guess + 1
