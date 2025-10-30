@@ -25,7 +25,12 @@ def print_triangle_o(rows):
     """
     Print a centered triangle made of the letter 'o'.
     """
-    pass
+    for i in range(1, rows + 1):
+        spaces = rows - i
+        o = 2 * i - 1
+        print(" " * spaces + "o" * o)
+
+print_triangle_o(5)
 
 sprint("---")
 
@@ -42,7 +47,13 @@ sprint("Exercise 5.2")
 
 def prod_list_easy(lst):
     """Returns the product of the elements in a number list iteratively."""
-    pass
+    count = 1
+    for i in lst: 
+        count *=i
+    return(count)
+
+num = [1, 2, 3, 4]
+print(prod_list_easy(num))
 
 sprint("---")
 
@@ -63,7 +74,13 @@ sprint("Exercise 5.3")
 
 def prod_list_rec(lst):
     """Returns the product of the elements in a number list recursively."""
-    pass
+
+    if not lst:        
+        return 1
+    return lst[0] * prod_list_rec(lst[1:])
+
+num = [1, 2, 3, 4]
+print(prod_list_rec(num))
 
 sprint("---")
 
@@ -88,8 +105,19 @@ def prod_list_rec_full(lst):
     If the list contains non-numeric elements, a message is printed out
     and the function returns nothing.
     """
-    pass
+    for i in lst:
+        if not isinstance(i, (int)):
+            return ("Non-numeric element found")
     
+    if not lst:        
+        return 1
+    else: 
+        return lst[0] * prod_list_rec_full(lst[1:])
+
+num = [1, 2, 3, 4, 'd']
+print(prod_list_rec_full(num))
+
+
 sprint("---")
 
 """
